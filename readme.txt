@@ -36,5 +36,34 @@ If you want a reproducible install list, create a `requirements.txt` with:
    pandas
    openpyxl
 
+   
+PPM Pro Project Attachment Extraction - README
+Purpose:
+This script (`PPM Pro Project Attachment Extraction.py`) logs into PPM Pro (Clarizen),
+queries all projects, downloads project attachments, zips them, and emails the archive.
+It is a template that requires tenant-specific query and download endpoints to be confirmed.
+Prerequisites:
+- Python 3.8+ recommended
+- Required Python packages: `requests`
+- Network access to your PPM Pro (Clarizen) REST API endpoint
+Configuration (environment variables):
+- PPM_USER / PPM_PASS: PPM Pro credentials
+- SMTP_HOST / SMTP_PORT / SMTP_USER / SMTP_PASS: SMTP settings
+- MAIL_FROM: sender email address
+- MAIL_TO: recipient email(s), comma-separated
+Key TODOs to finalize for your tenant:
+- Update the project query in `iter_projects` if your API requires different fields or syntax.
+- Replace the document query in `iter_project_documents` with the correct attachment lookup.
+- Confirm the correct download endpoint and payload in `download_document_bytes`.
+How to run:
+1) Set the environment variables listed above.
+2) Run the script:
+   python "PPM Pro Project Attachment Extraction.py"
+Notes & assumptions:
+- The script uses the Clarizen REST v2 login flow (getServerDefinition -> login).
+- Large attachment sets may exceed typical email size limits; consider splitting or using
+  a file share if needed.
+
+
 Contact:
 For questions or changes, update the notebook or contact the project owner.
