@@ -58,7 +58,3 @@ How to run:
 1) Set the environment variables listed above.
 2) Run the script:
    python "PPM Pro Project Attachment Extraction.py"
-
-
-Contact:
-For questions or changes, update the notebook or contact the project owner.
